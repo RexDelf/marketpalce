@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -15,7 +16,8 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Advert {
+@EqualsAndHashCode(callSuper = true)
+public class Advert extends CreationDateEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator = "advert_seq")
     private Long id;
@@ -23,14 +25,19 @@ public class Advert {
     private String description;
     private Integer price;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate published;
     private String location;
 
     @OneToMany(
-            mappedBy = "advert",
             cascade = CascadeType.ALL,
-            orphanRemoval = true
+            fetch = FetchType.EAGER
     )
+    @JoinTable(name = "advert_images",
+    joinColumns = {
+            @JoinColumn(name = "advert_id")
+    },
+    inverseJoinColumns = {
+            @JoinColumn(name = "image_id")
+    })
     private Set<AdvertImage> advertImages;
+
 }

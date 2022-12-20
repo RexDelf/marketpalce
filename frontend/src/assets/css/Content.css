@@ -1,0 +1,30 @@
+.adverts{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 15px;
+    row-gap: 15px;
+}
+
+div{
+    box-sizing: border-box;
+}
+
+.advert-card{
+    aspect-ratio: 2/3;
+    outline: 2px solid #EEEEEE;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.advert-image{
+    border-bottom: 2px solid #EEEEEE;
+    height: 50%;
+    overflow: hidden;
+}
+
+.advert-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+

@@ -24,9 +24,6 @@ public class AdvertImage {
     @Column(name = "image_data")
     private byte[] imageData;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Advert advert;
-
     public AdvertImage(String name, String type, byte[] imageData) {
         this.name = name;
         this.type = type;
