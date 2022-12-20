@@ -66,6 +66,7 @@ public class SearchPageController {
             destination.setLocation(source.getLocation());
             destination.setPrice(source.getPrice());
             destination.setTitle(source.getTitle());
+            destination.setCreatedAt(source.getCreatedAt());
 
             if(sourceSet.size() != 0){
                 destination.setAdvertImage(sourceSet.stream().findFirst().get());
