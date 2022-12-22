@@ -7,7 +7,7 @@ body{
     font-family: 'Source Sans Pro';
 }
 
-input[type="text"]{
+input{
     border: none;
     background: transparent;
     outline: none;

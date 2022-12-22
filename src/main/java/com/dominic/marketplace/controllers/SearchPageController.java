@@ -9,6 +9,7 @@ import org.modelmapper.AbstractConverter;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @RequestMapping("/api")
 @RestController
@@ -29,9 +29,17 @@ public class SearchPageController {
     private final AdvertService advertService;
 
     @GetMapping
-    public List<AdvertCardDTO> getAdverts(){
+    public Page<AdvertCardDTO> getAllAdverts(@RequestParam(defaultValue = "0") Integer pageNumber,
+                                             @RequestParam(defaultValue = "16") Integer pageSize){
         modelMapper.addConverter(converter);
-        return advertService.findAll().stream().map(advert -> modelMapper.map(advert, AdvertCardDTO.class)).collect(Collectors.toList());
+
+        Page<Advert> page = advertService.findAll(pageNumber, pageSize);
+
+        return page.map(advert -> modelMapper.map(advert, AdvertCardDTO.class));
+    }
+    @GetMapping("/{id}")
+    public Optional<Advert> getAdvert(@PathVariable Long id){
+        return advertService.findById(id);
     }
 
     @PostMapping(value = {"/create"}, consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})

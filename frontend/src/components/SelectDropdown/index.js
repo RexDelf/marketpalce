@@ -11,7 +11,7 @@ export default function SelectDropdown(props) {
             },
             backgroundColor: 'none',
             fontFamily: 'Source Sans Pro',
-            width: '100%'
+            width: '130px'
         }),
         menu:
             base => ({

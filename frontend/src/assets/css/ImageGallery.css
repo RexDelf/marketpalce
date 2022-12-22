@@ -1,0 +1,47 @@
+.slide img{
+    height: 500px;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+}
+
+.slide{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-gallery{
+    background-color: rgb(230, 232, 236);
+    width: max-content;
+    border-radius: 15px;
+    outline: 2px solid #EEEEEE;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+.image-gallery button{
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 70px;
+    border: none;
+    color: dimgray;
+    font-size: 32px;
+    opacity: 0;
+    transition: all 0.1s ease-out;
+}
+
+.image-gallery button:hover{
+    opacity: 1;
+}
+
+.gallery-right-btn{
+    background: linear-gradient(to right, transparent, rgb(194, 194, 199));
+    right: 0;
+}
+
+.gallery-left-btn{
+    background: linear-gradient(to left, transparent, rgb(194, 194, 199));
+}

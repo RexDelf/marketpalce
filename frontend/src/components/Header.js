@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faMagnifyingGlass, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faMagnifyingGlass, faBars, faPlus } from '@fortawesome/free-solid-svg-icons';
 import '../assets/css/Header.css';
 import logo from '../assets/icons/logo.svg';
 import SearchLocation from "../feature/SearchLocation";
 import Dropdown from "./Dropdown";
+import {Link} from "react-router-dom";
 
 export default function Header () {
     return(
@@ -28,6 +29,16 @@ export default function Header () {
                             </div>
                     </div>
                 </nav>
+                <div className="actionbar">
+                    <div className="create-advert">
+                        <Link to="/create">
+                            <button className="create-advert-btn">
+                                <FontAwesomeIcon icon={faPlus}/>
+                                <span className="create-advert-text">Create Advert</span>
+                            </button>
+                        </Link>
+                    </div>
+                </div>
             </div>
 
             <div className="lower-header">

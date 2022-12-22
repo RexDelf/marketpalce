@@ -5,7 +5,12 @@ import com.dominic.marketplace.repositories.AdvertRepository;
 import com.dominic.marketplace.services.AdvertService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -16,8 +21,9 @@ public class AdvertServiceImpl implements AdvertService {
 
     private final AdvertRepository advertRepository;
 
-    public List<Advert> findAll(){
-        return advertRepository.findAll();
+    public Page<Advert> findAll(Integer pageNumber, Integer pageSize){
+        Pageable paging = PageRequest.of(pageNumber, pageSize);
+        return advertRepository.findAll(paging);
     }
 
     @Override

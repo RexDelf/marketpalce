@@ -1,15 +1,11 @@
 package com.dominic.marketplace.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDate;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -31,13 +27,7 @@ public class Advert extends CreationDateEntity {
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
     )
-    @JoinTable(name = "advert_images",
-    joinColumns = {
-            @JoinColumn(name = "advert_id")
-    },
-    inverseJoinColumns = {
-            @JoinColumn(name = "image_id")
-    })
+    @JoinColumn(name = "advert_id")
     private Set<AdvertImage> advertImages;
 
 }

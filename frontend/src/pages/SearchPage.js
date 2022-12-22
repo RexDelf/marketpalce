@@ -6,13 +6,12 @@ import Content from "../feature/Content";
 
 export default function SearchPage(){
     return(
-        <div className="wrapper">
-            <Header/>
-            <main className="main">
+            <div className="search-page-wrapper">
                 <Filter/>
                 <ContentHeader/>
-                <Content/>
-            </main>
-        </div>
+                <div className="adverts">
+                    <Content/>
+                </div>
+            </div>
     )
 }

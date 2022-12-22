@@ -30,11 +30,11 @@ return (
             <div className="price">Price
                 <div className="min-price">
                     <div className="price-bg"><FontAwesomeIcon icon={faDollarSign}/></div>
-                    <input type="text" name=""/>
+                    <input type="number" name=""/>
                 </div>
                 <div className="max-price">
                     <div className="price-bg"><FontAwesomeIcon icon={faDollarSign}/></div>
-                    <input type="text" name=""/>
+                    <input type="number" name=""/>
                 </div>
             </div>
         </div>
