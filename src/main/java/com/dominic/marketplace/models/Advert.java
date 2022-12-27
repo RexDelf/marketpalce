@@ -1,10 +1,7 @@
 package com.dominic.marketplace.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Set;
 
@@ -13,6 +10,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
+@Builder
 public class Advert extends CreationDateEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator = "advert_seq")

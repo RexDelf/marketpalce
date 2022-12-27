@@ -1,14 +1,22 @@
 import { useState } from "react";
 import SelectDropdown from "../../../components/SelectDropdown";
 
-export default function SortBy () {
+export default function SortBy ({setSort}) {
     const options = [
-        { value: "name", label: "Название" },
-        { value: "high-price", label: "Дорогие" },
-        { value: "low-price", label: "Дешевые" },
-        { value: "new", label: "Новые" },
-        { value: "views", label: "Просмотры" }
+        { value: "new", label: "New" },
+        { value: "expensive", label: "Expensive" },
+        { value: "cheap", label: "Cheap" }
     ];
 
-    return <SelectDropdown options={options}/>
+    const mappings = {
+        new: ['desc', 'createdAt'],
+        expensive: ['desc', 'price'],
+        cheap: ['asc', 'price']
+    };
+
+    const handleChange = (e) => {
+        setSort({sortDir: mappings[e.value][0], sortBy: mappings[e.value][1]});
+    }
+
+    return <SelectDropdown passedFunction={handleChange} options={options}/>
 }

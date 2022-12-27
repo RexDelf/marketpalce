@@ -22,8 +22,9 @@ export default function CreateAdvertPage(){
         setImages(chosenImages);
     };
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
         try {
+            e.preventDefault();
             let formData = new FormData();
             formData.append("advert",
                 new Blob([JSON.stringify(advert)], {type: 'application/json'}
@@ -61,7 +62,7 @@ export default function CreateAdvertPage(){
                     <label>Photos
                         <input onChange={onChange} type="file" multiple/>
                     </label>
-                    <input onClick={() => handleSubmit()} type="submit" value="Submit"/>
+                    <input onClick={(e) => handleSubmit(e)} type="submit" value="Submit"/>
                 </form>
         </div>
     )

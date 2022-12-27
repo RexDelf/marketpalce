@@ -7,7 +7,7 @@ import SearchLocation from "../feature/SearchLocation";
 import Dropdown from "./Dropdown";
 import {Link} from "react-router-dom";
 
-export default function Header () {
+export default function Header ({handleSearch}) {
     return(
         <header className="header">
             <div className="upper-header">
@@ -24,8 +24,12 @@ export default function Header () {
                         <div className="searchbar-vl"></div>
                         <input type="text" className="search-window" placeholder="Search..."/>
                             <div className="search">
-                                <div className="search-icon"><FontAwesomeIcon icon={faMagnifyingGlass} /></div>
-                                <div className="search-btn">Search</div>
+                                <Link to="/">
+                                    <button className="search-btn" onClick={() => handleSearch(document.querySelector(".search-window"))}>
+                                        <FontAwesomeIcon icon={faMagnifyingGlass}/>
+                                        <span className="search-btn-text">Search</span>
+                                    </button>
+                                </Link>
                             </div>
                     </div>
                 </nav>
@@ -35,6 +39,14 @@ export default function Header () {
                             <button className="create-advert-btn">
                                 <FontAwesomeIcon icon={faPlus}/>
                                 <span className="create-advert-text">Create Advert</span>
+                            </button>
+                        </Link>
+                    </div>
+
+                    <div className="signin">
+                        <Link to="/signin">
+                            <button className="signin-btn">
+                                <span className="signin-text">Sign In</span>
                             </button>
                         </Link>
                     </div>

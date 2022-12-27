@@ -31,7 +31,7 @@ input[type="checkbox"]:checked::before {
 .sidebar{
     width: 300px;
     border: solid 2px #EEEEEE;
-    margin-left: 35px;
+    margin-left: 10px;
     border-radius: 7px;
     grid-row: 1/-1;
     height: max-content;

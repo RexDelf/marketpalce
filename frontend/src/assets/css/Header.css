@@ -40,6 +40,7 @@
 
 .navigation{
     width: 100%;
+    margin-right: 20px;
 }
 
 .searchbar{
@@ -49,7 +50,7 @@
     justify-content: space-between;
     border: solid 2px #EEEEEE;
     border-radius: 35px;
-    width: 70%;
+    width: 100%;
     height: 35px;
 }
 
@@ -83,22 +84,6 @@
     width: 100%;
     font-family: 'Source Sans Pro';
     font-size: 1rem;
-}
-
-.search{
-    color: white;
-    display: flex;
-    line-height: 0px;
-    flex-direction: row;
-    background-color: rgb(0, 126, 251);
-    height: 100%;
-    border: 2px solid white;
-    box-sizing: border-box;
-    min-width: 100px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 9999px;
-    gap: 10px;
 }
 
 .category{
@@ -170,6 +155,63 @@
     font-size: inherit;
     cursor: pointer;
     color: white;
+    border: none;
+    background: none;
+    width: max-content;
+    padding-inline: 20px;
+}
+
+.search{
+    background-color: rgb(0, 126, 251);
+    border-radius: 9999px;
+    overflow: hidden;
+    min-width: 100px;
+    border: 2px solid white;
+    height: 100%;
+}
+
+.search-btn{
+    color: white;
+    display: flex;
+    line-height: 0;
+    flex-direction: row;
+    border: none;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    background: none;
+}
+
+.actionbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.signin{
+    border-radius: 40px;
+    outline: 1px solid rgb(0, 126, 251);
+    overflow: hidden;
+}
+
+.signin-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    gap: 0.5em;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    color: rgb(0, 126, 251);
     border: none;
     background: none;
     width: max-content;

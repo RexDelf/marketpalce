@@ -32,9 +32,9 @@ export default function SelectDropdown(props) {
     }
 
     return (
-        <Select styles={style}
+        <Select defaultValue={props.options[0]} styles={style}
                 components={{
                     IndicatorSeparator: () => null
-                }} options={props.options}/>
+                }} options={props.options} onChange={e => props.passedFunction(e)}/>
     )
 }

@@ -4,19 +4,9 @@ import '../../assets/css/Content.css';
 import moment from "moment";
 import {Link} from "react-router-dom";
 
-export default function Content(){
-    const [adverts, setAdverts] = useState([]);
+export default function Content({adverts}){
 
-    useEffect(() => {
-        fetchAdverts();
-    }, [])
-
-    const fetchAdverts = async () => {
-        const response = await api.get("");
-        setAdverts(response.data);
-    }
-
-    return adverts.map((advert) => {
+    return (adverts)?.map((advert) => {
         return (
             <section key={advert.id} className="advert-card">
             <Link className="advert-link" to={`/${advert.id}`}>

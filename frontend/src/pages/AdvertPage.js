@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import api from "../api";
 import {useParams} from "react-router-dom";
 import ImageGallery from "../feature/ImageGallery";
+import moment from "moment";
 
 export default function AdvertPage(){
     const { id } = useParams();
@@ -18,9 +19,24 @@ export default function AdvertPage(){
         setAdvert(response.data);
     }
 
-    return (
+    return advert && (
         <div className="advert-page-wrapper">
-            {advert && <ImageGallery images={advert.advertImages}/>}
+            <div className="advert-gallery-title-row">
+                {advert && <ImageGallery images={advert.advertImages}/>}
+                <div className="advert-page-info">
+                    <div className="advert-page-info-container">
+                        <h3 className="advert-page-title">{advert.title}</h3>
+                        <div className="advert-page-number">{advert.id}</div>
+                        <div className="advert-page-price">{advert.price}</div>
+                        <div className="advert-page-date">{moment(advert.createdAt).format('DD-MM-YYYY HH:mm')}</div>
+                        <div className="advert-page-location">{advert.location}</div>
+                    </div>
+                </div>
+            </div>
+            <div className="advert-page-description-container">
+                <div className="advert-page-description-title">Description</div>
+                <div className="advert-page-description">{advert.description}</div>
+            </div>
         </div>
     )
 }

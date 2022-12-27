@@ -9,6 +9,7 @@ import org.modelmapper.AbstractConverter;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -30,10 +31,13 @@ public class SearchPageController {
 
     @GetMapping
     public Page<AdvertCardDTO> getAllAdverts(@RequestParam(defaultValue = "0") Integer pageNumber,
-                                             @RequestParam(defaultValue = "16") Integer pageSize){
+                                             @RequestParam(defaultValue = "16") Integer pageSize,
+                                             @RequestParam(defaultValue = "createdAt") String sortBy,
+                                             @RequestParam(defaultValue = "desc") String sortDir,
+                                             @RequestParam(required = false) String title){
         modelMapper.addConverter(converter);
 
-        Page<Advert> page = advertService.findAll(pageNumber, pageSize);
+        Page<Advert> page = advertService.findAllByQuery(title, pageNumber, pageSize, sortDir, sortBy);
 
         return page.map(advert -> modelMapper.map(advert, AdvertCardDTO.class));
     }

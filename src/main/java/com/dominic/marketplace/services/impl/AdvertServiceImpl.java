@@ -6,9 +6,7 @@ import com.dominic.marketplace.services.AdvertService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 
@@ -19,11 +17,23 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class AdvertServiceImpl implements AdvertService {
 
+    private static final ExampleMatcher SEARCH_CONDITIONS_MATCH_ALL = ExampleMatcher
+            .matching()
+            .withMatcher("title", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
+            .withIgnorePaths("id", "description", "price", "location", "advertImages");
+
     private final AdvertRepository advertRepository;
 
-    public Page<Advert> findAll(Integer pageNumber, Integer pageSize){
-        Pageable paging = PageRequest.of(pageNumber, pageSize);
-        return advertRepository.findAll(paging);
+    public Page<Advert> findAllByQuery(String title, Integer pageNumber, Integer pageSize, String sortDir, String sortBy){
+        Pageable paging = PageRequest.of(pageNumber, pageSize, Sort.by(Sort.Direction.fromString(sortDir), sortBy));
+
+        Advert advert = Advert.builder()
+                .title(title)
+                .build();
+
+        Example<Advert> example = Example.of(advert, SEARCH_CONDITIONS_MATCH_ALL);
+
+        return advertRepository.findAll(example, paging);
     }
 
     @Override

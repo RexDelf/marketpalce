@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface AdvertService {
-    Page<Advert> findAll(Integer pageNumber, Integer pageSize);
+    Page<Advert> findAllByQuery(String title, Integer pageNumber, Integer pageSize, String sortDir, String sortBy);
 
     Optional<Advert> findById(Long id);
 
