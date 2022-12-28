@@ -30,6 +30,7 @@ export default function AdvertPage(){
                         <div className="advert-page-price"><span>Price: </span>{advert.price}</div>
                         <div className="advert-page-date"><span>Posted: </span>{moment(advert.createdAt).format('DD-MM-YYYY HH:mm')}</div>
                         <div className="advert-page-location"><span>Location: </span>{advert.location}</div>
+                        <div className="advert-page-phone"><span>Phone number: </span>{advert.phone}</div>
                     </div>
                 </div>
             </div>

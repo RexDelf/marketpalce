@@ -3,9 +3,10 @@ import {useState} from "react";
 import api from "../api";
 
 export default function CreateAdvertPage(){
+    const token = localStorage.getItem("token");
     const [images, setImages] = useState();
     const [advert, setAdvert] = useState({
-        title: '', price: '', location: '', description: ''
+        title: '', price: '', location: '', description: '', phone: ''
     });
 
     const set = name => {
@@ -32,6 +33,8 @@ export default function CreateAdvertPage(){
             })
             const response = await api.post("/create", formData, {
                 headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Accept' : 'application/json',
                     'Content-Type': 'multipart/form-data'
                 }
             });
@@ -55,6 +58,9 @@ export default function CreateAdvertPage(){
                             </label>
                             <label>Location
                                 <input type="text" name="location" onChange={set('location')}/>
+                            </label>
+                            <label>Phone number
+                                <input type="text" name="phone" onChange={set('phone')}/>
                             </label>
                         </div>
                         <div className="create-description-wrapper">

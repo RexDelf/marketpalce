@@ -8,6 +8,7 @@ div{
     padding-block: 15px;
     display: flex;
     flex-direction: column;
+    height: 50%;
 }
 
 .advert-card{
@@ -47,9 +48,11 @@ div{
     flex-direction: row;
     justify-content: space-between;
     color: rgb(122, 122, 126);
+    padding-top: 10px;
+    border-top: 1px solid #EEEEEE;
 }
 
 .secondary-info{
-    padding-top: 15px;
+    margin-top: auto;
 }
 

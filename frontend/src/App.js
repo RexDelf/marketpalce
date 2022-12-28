@@ -12,17 +12,20 @@ import SigninPage from "./pages/SigninPage";
 import SignupPage from "./pages/SignupPage";
 
 function App() {
+    const token = localStorage.getItem("token");
     const [headerProps, setHeaderProps] = useState(null);
 
     const handleSearch = (elem) => {
-        setHeaderProps({title: elem.value});
+        if(elem.value) setHeaderProps({title: elem.value});
     }
 
     return (
         <BrowserRouter>
                 <Routes>
-                    <Route path='/signup' element={<SignupPage/>}/>
-                    <Route path='/signin' element={<SigninPage/>}/>
+                    {token ? null : <Route>
+                        <Route path='/signup' element={<SignupPage/>}/>
+                        <Route path='/signin' element={<SigninPage/>}/>
+                    </Route>}
                     <Route element={<HeaderFooterLayout handleSearch={handleSearch}/>}>
                         <Route path='/' element={<SearchPage headerProps={headerProps}/>}/>
                         <Route path='/create' element={<CreateAdvertPage/>}/>

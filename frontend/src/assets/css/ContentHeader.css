@@ -43,3 +43,8 @@
     border: solid 2px #EEEEEE;
     border-radius: 8px;
 }
+
+.overall{
+    font-weight: 600;
+    font-size: 20px;
+}

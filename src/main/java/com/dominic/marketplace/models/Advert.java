@@ -20,6 +20,7 @@ public class Advert extends CreationDateEntity {
     private Integer price;
 
     private String location;
+    private String phone;
 
     @OneToMany(
             cascade = CascadeType.ALL,

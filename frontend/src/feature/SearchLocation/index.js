@@ -1,12 +1,11 @@
-import { useState } from "react";
 import SelectDropdown from "../../components/SelectDropdown";
 
 export default function SearchLocation () {
     const options = [
-        { value: "all", label: "Любой" },
-        { value: "mogilev", label: "Могилев" },
-        { value: "vitebsk", label: "Витебск" },
-        { value: "brest", label: "Брест" },
+        { value: "all", label: "All" },
+        { value: "mogilev", label: "Mogilev" },
+        { value: "vitebsk", label: "Vitebsk" },
+        { value: "brest", label: "Brest" },
     ];
 
     return <SelectDropdown options={options}/>
