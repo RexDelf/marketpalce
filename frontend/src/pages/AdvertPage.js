@@ -26,10 +26,10 @@ export default function AdvertPage(){
                 <div className="advert-page-info">
                     <div className="advert-page-info-container">
                         <h3 className="advert-page-title">{advert.title}</h3>
-                        <div className="advert-page-number">{advert.id}</div>
-                        <div className="advert-page-price">{advert.price}</div>
-                        <div className="advert-page-date">{moment(advert.createdAt).format('DD-MM-YYYY HH:mm')}</div>
-                        <div className="advert-page-location">{advert.location}</div>
+                        <div className="advert-page-number"><span>ID: </span>{advert.id}</div>
+                        <div className="advert-page-price"><span>Price: </span>{advert.price}</div>
+                        <div className="advert-page-date"><span>Posted: </span>{moment(advert.createdAt).format('DD-MM-YYYY HH:mm')}</div>
+                        <div className="advert-page-location"><span>Location: </span>{advert.location}</div>
                     </div>
                 </div>
             </div>

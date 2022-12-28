@@ -7,6 +7,9 @@ import Header from "./components/Header";
 import AdvertPage from "./pages/AdvertPage";
 import Footer from "./components/Footer";
 import {useState} from "react";
+import HeaderFooterLayout from "./components/HeaderFooterLayout";
+import SigninPage from "./pages/SigninPage";
+import SignupPage from "./pages/SignupPage";
 
 function App() {
     const [headerProps, setHeaderProps] = useState(null);
@@ -17,15 +20,15 @@ function App() {
 
     return (
         <BrowserRouter>
-            <Header handleSearch={handleSearch}/>
-            <main className="main">
                 <Routes>
-                    <Route path='/' element={<SearchPage headerProps={headerProps}/>}/>
-                    <Route path='/create' element={<CreateAdvertPage/>}/>
-                    <Route path='/:id' element={<AdvertPage/>}/>
+                    <Route path='/signup' element={<SignupPage/>}/>
+                    <Route path='/signin' element={<SigninPage/>}/>
+                    <Route element={<HeaderFooterLayout handleSearch={handleSearch}/>}>
+                        <Route path='/' element={<SearchPage headerProps={headerProps}/>}/>
+                        <Route path='/create' element={<CreateAdvertPage/>}/>
+                        <Route path='/:id' element={<AdvertPage/>}/>
+                    </Route>
                 </Routes>
-            </main>
-            <Footer/>
         </BrowserRouter>
     );
 }

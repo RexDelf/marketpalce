@@ -3,14 +3,15 @@
 }
 
 .advert-page-info{
-    background-color: rgb(230, 232, 236);
-    width: 300px;
+    background-color: #f5f5f5;
+    width: 320px;
     border-radius: 15px;
-    outline: 2px solid #EEEEEE;
 }
 
 .advert-page-title{
-    font-size: 24px;
+    font-size: 26px;
+    line-height: 35px;
+    padding-bottom: 20px;
 }
 
 .advert-page-info-container{
@@ -19,12 +20,34 @@
     line-height: 40px;
 }
 
-.advert-page-info-container *{
+.advert-page-info-container div{
     border-bottom: 2px solid #EEEEEE;
+}
+
+.advert-page-info-container span{
+    font-weight: 600;
 }
 
 .advert-gallery-title-row{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.advert-page-description{
+    overflow-wrap: break-word;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.advert-page-description-title{
+    font-size: 28px;
+    padding-block: 20px;
+    font-weight: 600;
+}
+
+.advert-page-description-container{
+    max-width: 940px;
+    padding-top: 20px;
 }

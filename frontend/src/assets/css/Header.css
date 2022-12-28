@@ -217,3 +217,26 @@
     width: max-content;
     padding-inline: 20px;
 }
+
+.logout{
+    border-radius: 40px;
+    outline: 1px solid rgb(251, 0, 59);
+    overflow: hidden;
+}
+
+.logout-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    gap: 0.5em;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    color: rgb(251, 0, 59);
+    border: none;
+    background: none;
+    width: max-content;
+    padding-inline: 20px;
+}

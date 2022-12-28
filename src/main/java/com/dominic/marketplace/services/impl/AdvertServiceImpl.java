@@ -3,13 +3,13 @@ package com.dominic.marketplace.services.impl;
 import com.dominic.marketplace.models.Advert;
 import com.dominic.marketplace.repositories.AdvertRepository;
 import com.dominic.marketplace.services.AdvertService;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 

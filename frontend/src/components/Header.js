@@ -8,6 +8,14 @@ import Dropdown from "./Dropdown";
 import {Link} from "react-router-dom";
 
 export default function Header ({handleSearch}) {
+    const token = localStorage.getItem('token');
+
+    function logout(e){
+        e.preventDefault();
+        localStorage.removeItem('token');
+        window.location.reload();
+    }
+
     return(
         <header className="header">
             <div className="upper-header">
@@ -35,7 +43,7 @@ export default function Header ({handleSearch}) {
                 </nav>
                 <div className="actionbar">
                     <div className="create-advert">
-                        <Link to="/create">
+                        <Link to={token ? "/create" : "/signin"}>
                             <button className="create-advert-btn">
                                 <FontAwesomeIcon icon={faPlus}/>
                                 <span className="create-advert-text">Create Advert</span>
@@ -43,13 +51,18 @@ export default function Header ({handleSearch}) {
                         </Link>
                     </div>
 
-                    <div className="signin">
+                    {token ? <div className="logout">
+                            <button className="logout-btn" onClick={(e) => logout(e)}>
+                                <span className="logout-text">Log Out</span>
+                            </button>
+                    </div>
+                        : <div className="signin">
                         <Link to="/signin">
                             <button className="signin-btn">
                                 <span className="signin-text">Sign In</span>
                             </button>
                         </Link>
-                    </div>
+                    </div>}
                 </div>
             </div>
 

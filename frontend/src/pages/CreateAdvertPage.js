@@ -1,7 +1,4 @@
-import Header from "../components/Header";
-import Filter from "../feature/Filter";
-import ContentHeader from "../feature/ContentHeader";
-import Content from "../feature/Content";
+import '../assets/css/CreateAdvertPage.css';
 import {useState} from "react";
 import api from "../api";
 
@@ -45,20 +42,22 @@ export default function CreateAdvertPage(){
 
     return(
         <div className="create-page-wrapper">
-                <form>
-                    <label>
-                        Title
-                        <input type="text" name="title" onChange={set('title')}/>
-                    </label>
-                    <label>Price
-                        <input type="number" name="price" onChange={set('price')}/>
-                    </label>
-                    <label>Location
-                        <input type="text" name="location" onChange={set('location')}/>
-                    </label>
-                    <label>Description
-                        <textarea className="description" name="description" onChange={set('description')}/>
-                    </label>
+                <form className="create-advert-form">
+                    <div className="advert-create-info-wrapper">
+                        <label>
+                            Title
+                            <input type="text" name="title" onChange={set('title')}/>
+                        </label>
+                        <label>Price
+                            <input type="number" name="price" onChange={set('price')}/>
+                        </label>
+                        <label>Location
+                            <input type="text" name="location" onChange={set('location')}/>
+                        </label>
+                        <label>Description
+                            <textarea className="description" name="description" onChange={set('description')}/>
+                        </label>
+                    </div>
                     <label>Photos
                         <input onChange={onChange} type="file" multiple/>
                     </label>

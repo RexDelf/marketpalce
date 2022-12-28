@@ -1,5 +1,5 @@
 .slide img{
-    height: 500px;
+    width: 940px;
     aspect-ratio: 16/9;
     object-fit: contain;
 }
@@ -12,10 +12,9 @@
 }
 
 .image-gallery{
-    background-color: rgb(230, 232, 236);
+    background-color: #f5f5f5;
     width: max-content;
     border-radius: 15px;
-    outline: 2px solid #EEEEEE;
     overflow: hidden;
     position: relative;
     display: flex;
