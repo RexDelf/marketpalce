@@ -1,0 +1,118 @@
+.create-page-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.create-advert-form-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.create-advert-form-wrapper textarea{
+    resize: none;
+}
+
+.create-advert-form label{
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 370px;
+}
+
+.advert-create-info-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+
+.advert-create-info-wrapper input{
+    border: 2px solid #EEEEEE;
+    font-size: 20px;
+    height: 40px;
+    padding-inline: 15px;
+    border-radius: 9999px;
+
+
+}
+
+.advert-short-info-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.create-description-wrapper label{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.create-description-wrapper label textarea{
+    width: 100%;
+    height: 200px;
+    border: 2px solid #EEEEEE;
+    font-size: 16px;
+    font-family: 'Source Sans Pro';
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.add-images{
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+}
+
+.add-images label{
+    width: max-content;
+}
+
+.add-images-btn-wrapper{
+    border-radius: 40px;
+    padding-inline: 80px;
+    outline: 1px solid rgb(0, 126, 251);
+    color: rgb(0, 126, 251);
+    text-align:center;
+    cursor: pointer;
+    height: 40px;
+}
+
+.add-images-btn{
+    display: none;
+    border: none;
+    background: none;
+}
+
+.submit-advert-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.submit-advert{
+    border-radius: 40px;
+    outline: 1px solid rgb(0, 126, 251);
+    overflow: hidden;
+    width: 300px;
+}
+
+.submit-advert-btn{
+    height: 40px;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    color: white;
+    border: none;
+    background: rgb(0, 126, 251);
+    width: 100%;
+    padding-inline: 20px;
+}

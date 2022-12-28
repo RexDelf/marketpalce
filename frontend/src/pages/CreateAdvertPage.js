@@ -42,27 +42,43 @@ export default function CreateAdvertPage(){
 
     return(
         <div className="create-page-wrapper">
+            <div className="create-advert-form-wrapper">
                 <form className="create-advert-form">
                     <div className="advert-create-info-wrapper">
-                        <label>
-                            Title
-                            <input type="text" name="title" onChange={set('title')}/>
+                        <div className="advert-short-info-wrapper">
+                            <label>
+                                Title
+                                <input type="text" name="title" onChange={set('title')}/>
+                            </label>
+                            <label>Price
+                                <input type="number" name="price" onChange={set('price')}/>
+                            </label>
+                            <label>Location
+                                <input type="text" name="location" onChange={set('location')}/>
+                            </label>
+                        </div>
+                        <div className="create-description-wrapper">
+                            <label>Description
+                                <textarea className="description" name="description" onChange={set('description')}/>
+                            </label>
+                        </div>
+                    </div>
+                    <div className="add-images">
+                        <label>Photos
                         </label>
-                        <label>Price
-                            <input type="number" name="price" onChange={set('price')}/>
-                        </label>
-                        <label>Location
-                            <input type="text" name="location" onChange={set('location')}/>
-                        </label>
-                        <label>Description
-                            <textarea className="description" name="description" onChange={set('description')}/>
+                        <label className="add-images-btn-wrapper">
+                            <input className="add-images-btn" onChange={onChange} type="file" accept="image/png, image/jpeg" multiple />
+                            Upload
                         </label>
                     </div>
-                    <label>Photos
-                        <input onChange={onChange} type="file" multiple/>
-                    </label>
-                    <input onClick={(e) => handleSubmit(e)} type="submit" value="Submit"/>
+                    <div className="submit-advert-wrapper">
+                        <div className="submit-advert">
+                            <input onClick={(e) => handleSubmit(e)} className="submit-advert-btn" type="submit"
+                                   value="Submit"/>
+                        </div>
+                    </div>
                 </form>
+            </div>
         </div>
     )
 }
