@@ -67,8 +67,11 @@
     flex-direction: row;
     align-items: center;
     gap: 5px;
-    width: max-content;
     color: rgb(185, 185, 195);
+}
+
+.search-location-container{
+    width: 130px;
 }
 
 .location-icon{
@@ -239,4 +242,83 @@
     background: none;
     width: max-content;
     padding-inline: 20px;
+}
+
+@media screen and (min-width: 600px)
+and (max-width: 1024px) {
+    .logo{
+        font-size: 18px;
+        padding-right: 20px;
+        gap: 0;
+    }
+
+    .logo-icon{
+        width: 40px;
+        height: 40px;
+    }
+
+    .create-advert-text{
+        display: none;
+
+    }
+    .create-advert{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        border-radius: 50%;
+
+    }
+
+    .search-location-container{
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 600px)
+and (orientation: portrait) {
+
+    .logo{
+        font-size: 0;
+        gap: 0;
+        padding: 0;
+    }
+
+    .location{
+        display: none;
+    }
+
+    .create-advert{
+        display: none;
+    }
+
+    .search{
+        min-width: 31px;
+        justify-content: center;
+        font-size: 12px;
+    }
+
+    .search-btn span{
+        display: none;
+    }
+
+    .upper-header{
+        padding-right: 10px;
+        padding-left: 5px;
+    }
+
+    .navigation{
+        margin-right: 10px;
+    }
+
+    .signin-btn{
+        height: 30px;
+        padding-inline: 10px;
+    }
+
+    .logout-btn{
+        height: 30px;
+        padding-inline: 10px;
+    }
 }

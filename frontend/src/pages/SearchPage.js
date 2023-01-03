@@ -40,7 +40,7 @@ export default function SearchPage({headerProps}){
 
     return(
             <div className="search-page-wrapper">
-                <Filter/>
+                {/*<Filter/>*/}
                 <ContentHeader setSort={setSort} resultInfo={{queryTitle: headerProps?.title, page: searchData.number, numberOfResults: searchData.numberOfElements, size: searchData.size, total: searchData.totalElements}}/>
                 <div className="adverts">
                     <Content adverts={searchData.content}/>

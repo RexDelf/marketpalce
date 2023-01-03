@@ -45,3 +45,18 @@
 .gallery-left-btn{
     background: linear-gradient(to left, transparent, rgb(194, 194, 199));
 }
+
+@media screen and (min-width: 600px)
+and (max-width: 1024px) {
+    .slide img{
+        width: 658px;
+    }
+}
+
+@media screen and (max-width: 600px)
+and (orientation: portrait) {
+    .slide img{
+        width: 290px;
+        aspect-ratio: 4/3;
+    }
+}

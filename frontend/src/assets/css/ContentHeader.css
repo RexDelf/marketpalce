@@ -48,3 +48,14 @@
     font-weight: 600;
     font-size: 20px;
 }
+
+@media screen and (max-width: 600px)
+and (orientation: portrait) {
+    .sort-by{
+        display: none;
+    }
+
+    .overall{
+        font-size: 18px;
+    }
+}

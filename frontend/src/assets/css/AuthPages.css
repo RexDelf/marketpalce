@@ -44,7 +44,7 @@
     font-weight: 800;
 }
 
-label {
+.auth-form label {
     font-size: 14px;
     font-weight: 600;
     color: rgb(34, 34, 34);
@@ -81,4 +81,89 @@ label {
 
 .back-to-main-text{
     margin-top: 30px;
+}
+
+@media screen and (min-width: 600px)
+and (max-width: 1024px) {
+    .auth-form {
+        width: 550px;
+    }
+
+    .auth-form-inputs{
+        gap: 30px;
+    }
+
+    .auth-form-title {
+        font-size: 32px;
+    }
+
+    .auth-form-container input{
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .auth-form label {
+        font-size: 18px;
+    }
+
+    .submit-btn{
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .signup-text{
+        font-size: 20px;
+    }
+
+    .already-registered-text{
+        font-size: 20px;
+    }
+
+    .back-to-main-text{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 600px)
+and (orientation: portrait) {
+    .auth-form {
+        width: 300px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .auth-form-inputs{
+        gap: 10px;
+    }
+
+    .auth-form-title {
+        font-size: 24px;
+    }
+
+    .auth-form-container input{
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .auth-form label {
+        font-size: 14px;
+    }
+
+    .submit-btn{
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .signup-text{
+        font-size: 17px;
+    }
+
+    .already-registered-text{
+        font-size: 17px;
+    }
+
+    .back-to-main-text{
+        margin-top: 20px;
+        font-size: 18px;
+    }
 }

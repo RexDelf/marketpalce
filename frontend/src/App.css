@@ -44,3 +44,10 @@ a{
     margin-inline: 25px;
     margin-top: 20px;
 }
+
+@media screen and (max-width: 600px)
+and (orientation: portrait) {
+    .main{
+        margin-inline: 15px;
+    }
+}

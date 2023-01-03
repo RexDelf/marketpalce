@@ -22,7 +22,7 @@ import java.util.*;
 @RequestMapping("/api")
 @RestController
 @RequiredArgsConstructor
-public class SearchPageController {
+public class AdvertController {
 
     @Autowired
     private ModelMapper modelMapper;
@@ -31,7 +31,7 @@ public class SearchPageController {
 
     @GetMapping
     public Page<AdvertCardDTO> getAllAdverts(@RequestParam(defaultValue = "0") Integer pageNumber,
-                                             @RequestParam(defaultValue = "16") Integer pageSize,
+                                             @RequestParam(defaultValue = "18") Integer pageSize,
                                              @RequestParam(defaultValue = "createdAt") String sortBy,
                                              @RequestParam(defaultValue = "desc") String sortDir,
                                              @RequestParam(required = false) String title){

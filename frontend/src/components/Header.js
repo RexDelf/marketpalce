@@ -27,7 +27,9 @@ export default function Header ({handleSearch}) {
                     <div className="searchbar">
                         <div className="location">
                             <div className="location-icon"><FontAwesomeIcon icon={faLocationDot}/></div>
-                            <SearchLocation/>
+                            <div className="search-location-container">
+                                <SearchLocation/>
+                            </div>
                         </div>
                         <div className="searchbar-vl"></div>
                         <input type="text" className="search-window" placeholder="Search..."/>
@@ -66,28 +68,28 @@ export default function Header ({handleSearch}) {
                 </div>
             </div>
 
-            <div className="lower-header">
-                <div className="category">
-                    <div className="category-icon"><FontAwesomeIcon icon={faBars} /></div>
-                    <Dropdown
-                        trigger={<button className="category-btn">Categories
-                                    <div className="category-arrow"><i className="arrow down"></i></div>
-                                </button>}
-                        menu={[
-                            <button onClick={e => console.log(1)}>Menu 1</button>,
-                            <button onClick={e => console.log(2)}>Menu 2</button>,
-                        ]}
-                    />
-                </div>
+            {/*<div className="lower-header">*/}
+            {/*    <div className="category">*/}
+            {/*        <div className="category-icon"><FontAwesomeIcon icon={faBars} /></div>*/}
+            {/*        <Dropdown*/}
+            {/*            trigger={<button className="category-btn">Categories*/}
+            {/*                        <div className="category-arrow"><i className="arrow down"></i></div>*/}
+            {/*                    </button>}*/}
+            {/*            menu={[*/}
+            {/*                <button onClick={e => console.log(1)}>Menu 1</button>,*/}
+            {/*                <button onClick={e => console.log(2)}>Menu 2</button>,*/}
+            {/*            ]}*/}
+            {/*        />*/}
+            {/*    </div>*/}
 
-                <div className="vl"></div>
+            {/*    <div className="vl"></div>*/}
 
-                <div className="featured">
-                    <a href="">Most Viewed</a>
-                    <a href="">Popular Last Week</a>
-                    <a href="">Trusted Salers</a>
-                </div>
-            </div>
+            {/*    <div className="featured">*/}
+            {/*        <a href="">Most Viewed</a>*/}
+            {/*        <a href="">Popular Last Week</a>*/}
+            {/*        <a href="">Trusted Salers</a>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
         </header>
     )
 }

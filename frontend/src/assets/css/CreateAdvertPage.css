@@ -38,8 +38,6 @@
     height: 40px;
     padding-inline: 15px;
     border-radius: 9999px;
-
-
 }
 
 .advert-short-info-wrapper{
@@ -115,4 +113,50 @@
     background: rgb(0, 126, 251);
     width: 100%;
     padding-inline: 20px;
+}
+
+@media screen and (min-width: 600px)
+and (max-width: 1024px) {
+    .advert-create-info-wrapper{
+        flex-direction: column;
+    }
+
+    .create-page-wrapper{
+        margin-top: 40px;
+    }
+
+    .add-images{
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width: 600px)
+and (orientation: portrait) {
+    .advert-create-info-wrapper{
+        flex-direction: column;
+    }
+
+    .create-page-wrapper{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .add-images{
+        padding-top: 20px;
+    }
+
+    .create-description-wrapper label textarea{
+        width: 85%;
+        height: 200px;
+    }
+
+    .advert-short-info-wrapper label{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .create-advert-form label{
+        width: 100%;
+    }
 }

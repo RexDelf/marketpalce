@@ -10,9 +10,9 @@ export default function SelectDropdown(props) {
                 border: 'none',
             },
             backgroundColor: 'none',
-            fontFamily: 'Source Sans Pro',
-            width: '130px'
+            fontFamily: 'Source Sans Pro'
         }),
+
         menu:
             base => ({
                 ...base,

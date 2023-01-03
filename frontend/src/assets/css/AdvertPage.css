@@ -51,3 +51,71 @@
     max-width: 940px;
     padding-top: 20px;
 }
+
+@media screen and (min-width: 600px)
+and (max-width: 1024px) {
+    .advert-page-wrapper{
+        margin-inline: 30px;
+    }
+
+    .advert-page-info{
+        width: 100%;
+    }
+    .advert-page-info-container{
+        padding-bottom: 40px;
+    }
+
+    .advert-gallery-title-row{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .advert-page-description-container{
+        padding-top: 10px;
+    }
+
+    .advert-page-description-title{
+        padding-block: 10px;
+    }
+}
+
+@media screen and (max-width: 600px)
+and (orientation: portrait) {
+    .advert-page-wrapper{
+        margin-inline: 0;
+    }
+
+    .advert-gallery-title-row{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .advert-page-info{
+        width: 100%;
+    }
+
+    .advert-page-description-container{
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+
+    .advert-page-description-title{
+        padding-block: 10px;
+    }
+
+    .advert-page-title{
+        font-size: 24px;
+        line-height: 30px;
+        padding-bottom: 10px;
+    }
+
+    .advert-page-info-container{
+        padding: 20px;
+        font-size: 16px;
+        line-height: 40px;
+    }
+
+    .advert-page-info-container{
+        padding-bottom: 40px;
+    }
+}

@@ -12,7 +12,7 @@ export default function ContentHeader({setSort, resultInfo}){
                     <span className="amount">{base + 1} - {base + resultInfo.numberOfResults} of over {resultInfo.total} results for </span>
                     <span className="product">{`"${resultInfo.queryTitle}"`}</span>
                 </div> :
-                    <div className="overall">Total adverts: {resultInfo.total}</div>
+                    <div className="overall">{base + 1} - {base + resultInfo.numberOfResults} of total: {resultInfo.total}</div>
                 }
                 <div className="sorting">
                     <div className="sort-by">Sort by :</div>
